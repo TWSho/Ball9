@@ -19,6 +19,7 @@ export default function App() {
   return (
     <div
       className="App"
+      style={{ touchAction: 'none', width: '100vw', height: '100vh' }} // タッチアクションを無効化
     >
       <h1>Ball 9</h1>
       <Canvas>
@@ -49,10 +50,10 @@ function Room({ position }) {
       {/* 床の後部分 */}
       <Box position={[0, -1, 2.7]} rotation={[0, 0, 0]} args={[10, 1, 15]}/>
       {/* 壁 :) */}
-      <Box position={[-5, 0, 0]} rotation={[0, Math.PI / 2, 0]} args={[21, 3, 1]} />
-      <Box position={[5, 0, 0]} rotation={[0, -Math.PI / 2, 0]} args={[21, 3, 1]} />
-      <Box position={[0, 0, 10]} rotation={[0, Math.PI, 0]} args={[11, 3, 1]} />
-      <Box position={[0, 0, -10]} rotation={[0, 0, 0]} args={[11, 3, 1]} />
+      <Box position={[-5, 0, 0]} rotation={[0, Math.PI / 2, 0]} args={[21, 5, 1]} />
+      <Box position={[5, 0, 0]} rotation={[0, -Math.PI / 2, 0]} args={[21, 5, 1]} />
+      <Box position={[0, 0, 10]} rotation={[0, Math.PI, 0]} args={[11, 5, 1]} />
+      <Box position={[0, 0, -10]} rotation={[0, 0, 0]} args={[11, 5, 1]} />
       {/* 穴 */}
       <Hole position={[0, -1, -6]} rotation={[-Math.PI/2,0,0]} />
       <Box position={[Math.random() * 10 - 5, 0, Math.random() * 10 - 5]} rotation={[0, Math.random() * Math.PI, 0]} args={[2, 1, 1]} color={"darkgray"}/>
@@ -128,7 +129,7 @@ function Box({ position, rotation, args, color}) {
 function Tips() {
   return (
     <Text 
-    position={[0, 0.8, -9]} 
+    position={[0, 1.25, -9]} 
     rotation={[0, 0, 0]}
     fontSize={0.5} 
     color="white"

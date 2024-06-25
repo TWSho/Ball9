@@ -7,7 +7,7 @@ function Ball() {
   const [ref, api] = useSphere(() => ({
     mass: 1,
     position: [0, 4, 5],
-    args: [0.5],
+    args: [0.8],
   }));
 
   const touchStart = useRef([0, 0]);
@@ -63,7 +63,7 @@ function Ball() {
       castShadow
       receiveShadow
     >
-      <sphereGeometry args={[0.5, 32, 32]} />
+      <sphereGeometry args={[0.8, 32, 32]} />
       <meshStandardMaterial color="red" />
     </mesh>
   );
