@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 function Ball() {
   const [ref, api] = useSphere(() => ({
-    mass: 1,
+    mass: 5,
     position: [0, 4, 5],
     args: [0.8],
   }));
@@ -36,7 +36,7 @@ function Ball() {
 
     // スワイプの方向をカメラのローカル座標系に変換
     const direction = new THREE.Vector3(deltaX, 0, deltaY).applyQuaternion(camera.quaternion);
-    api.velocity.set(direction.x * 0.1, 0, direction.z * 0.1); // スワイプの方向に応じた速度を設定
+    api.velocity.set(direction.x * 0.2, 0, direction.z * 0.2); // スワイプの方向に応じた速度を設定
 
     // Remove event listeners
     document.removeEventListener('pointermove', handlePointerMove);
